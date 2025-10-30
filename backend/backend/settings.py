@@ -126,10 +126,22 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Allow all origins (for this assessment, this is fine)
-CORS_ALLOW_ALL_ORIGINS = True
+# CORS_ALLOW_ALL_ORIGINS = True
 
 # Or, for more security, allow only your React app's future URL
-# CORS_ALLOWED_ORIGINS = [
-#     "http://localhost:3000",
-#     "http://127.0.0.1:3000",
-# ]
+
+# 1. ALLOWED_HOSTS: Tell Django to accept requests from these domains
+ALLOWED_HOSTS = [
+    '127.0.0.1', 
+    'localhost',
+    'spotter-assessment-yd5m.onrender.com', # Your Render domain
+    # ADD YOUR SPECIFIC VERCEL DOMAIN HERE:
+    'spotter-assessment-ae3x7kle4-saqlains-projects-211cc503.vercel.app' 
+]
+
+# 2. CORS_ALLOWED_ORIGINS: Tell Django to allow API calls from these domains
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
+    "https://spotter-assessment-yd5m.onrender.com",
+    "https://spotter-assessment-ae3x7kle4-saqlains-projects-211cc503.vercel.app",
+]
