@@ -1,0 +1,2 @@
+# In your backend terminal (stop the server with Ctrl+C):
+pip freeze > requirements.txt
