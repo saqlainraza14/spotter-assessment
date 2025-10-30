@@ -28,7 +28,7 @@ function App() {
 
     try {
       // THIS IS THE API CALL to our Django backend
-      const response = await axios.post('https://spotter-assessment-yd5m.onrender.com', {
+      const response = await axios.post('https://spotter-assessment-yd5m.onrender.com/api/calculate-trip/', {
         currentLocation,
         pickupLocation,
         dropoffLocation,
